@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>أول خطوة في Web Development – HTML من الصفر</title>
+<!-- الخط اختياري: لو مفيش نت الموقع بيشتغل بخط النظام -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="bar"><i></i></div>
+<button id="menu" aria-label="القائمة الجانبية">☰ الدروس</button>
+<nav id="side" aria-label="أقسام الدرس"><h2>🧭 رحلة الويب</h2><small>اختار قسم أو كمّل بالترتيب</small></nav>
+
+<main><div class="wrap">
+
+<section id="s1" data-title="مقدمة الدرس" class="hero">
+<h2>أهلاً بيك في أول درس Web Development 👋</h2>
+<p>الدرس ده مش محتاج أي خبرة قبل كده. هنفهم الويب بيشتغل إزاي، ونثبّت الأدوات، ونكتب أول صفحة HTML بإيدينا.</p>
+<p><span class="pill">🌐 فهم الويب</span><span class="pill">🧩 Front-End وBack-End</span><span class="pill">📝 HTML</span><span class="pill">🛠️ VS Code</span><span class="pill">🎯 تحدي عملي</span></p>
+<p>اتحرك بين الأقسام من القائمة الجانبية أو من زرار «التالي». التقدم بتاعك ظاهر في الشريط اللي فوق.</p>
+</section>
+
+<section id="s2" data-title="ما هو Web Development؟">
+<h2>ما هو Web Development؟</h2>
+<p><span class="t">Web Development</span> يعني «تطوير المواقع»: بناء أي صفحة أو تطبيق بتفتحه من المتصفح، زي موقع مدرستك أو يوتيوب أو متجر أونلاين.</p>
+<p>أي موقع بتدخله فيه جزئين شغالين مع بعض: جزء <b>بتشوفه</b> وجزء <b>مستخبي</b> ورا الكواليس. وده بيوديني للقسم الجاي.</p>
+<div class="tip"><b>💡 فكّر كده</b>الموقع زي مطعم: فيه صالة بيقعد فيها الزبون، وفيه مطبخ بيتحضّر فيه الأكل.</div>
+</section>
+
+<section id="s3" data-title="Front-End">
+<h2>Front-End – الواجهة اللي بتشوفها</h2>
+<p>الـ<span class="t">Front-End</span> هو كل حاجة بتظهر قدامك في المتصفح وتتعامل معاها: الألوان، الأزرار، الصور، الكتابة، والقوائم. هو «صالة المطعم».</p>
+<p>مطور الـFront-End مسؤول إن الواجهة تبقى حلوة وسهلة وتشتغل على الموبايل والكمبيوتر.</p>
+<div class="grid"><div class="card"><div class="ic">🎨</div><h4>الشكل</h4>ألوان وخطوط وتصميم</div><div class="card"><div class="ic">👆</div><h4>التفاعل</h4>ضغط أزرار وكتابة في خانات</div><div class="card"><div class="ic">📱</div><h4>التجاوب</h4>يظبط نفسه على أي شاشة</div></div>
+</section>
+
+<section id="s4" data-title="Back-End">
+<h2>Back-End – الكواليس</h2>
+<p>الـ<span class="t">Back-End</span> هو الجزء اللي شغال على <span class="t">سيرفر</span> (جهاز قوي متوصل بالإنترنت)، وانت مش بتشوفه. هو «مطبخ المطعم».</p>
+<p>وظيفته: يحفظ البيانات في <span class="t">قاعدة بيانات</span>، ويتأكد إن الباسورد صح، ويجيب الرسايل والمنتجات ويبعتها للواجهة.</p>
+<div class="warn"><b>⚠️ لاحظ</b>الدرس ده Front-End بس. فأي زرار هنعمله هنا مش هيحفظ بيانات حقيقية، لأننا لسه ما اتعلمناش Back-End.</div>
+</section>
+
+<section id="s5" data-title="API والتواصل بين الاتنين">
+<h2>API – الجرسون بين الزبون والمطبخ 🧑‍🍳</h2>
+<p>الزبون (Front-End) مش بيدخل المطبخ (Back-End) بنفسه. فيه <span class="t">API</span> بيشتغل جرسون: ياخد الطلب للمطبخ ويرجّع الرد.</p>
+<div class="diag"><svg viewBox="0 0 720 200" role="img" aria-label="رسم يوضح الزبون ثم الـAPI ثم المطبخ">
+<defs><marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0L10,5L0,10z" fill="#0f1b33"/></marker></defs>
+<rect x="10" y="40" width="190" height="110" rx="14" fill="#d9f3f1" stroke="#0e9a9a" stroke-width="3"/><text x="105" y="85" text-anchor="middle" font-size="38">🧑‍💻</text><text x="105" y="125" text-anchor="middle" font-size="18" font-weight="700" fill="#0f1b33">الزبون = Front-End</text>
+<rect x="265" y="55" width="190" height="80" rx="40" fill="#fff3d1" stroke="#f2b01e" stroke-width="3"/><text x="360" y="92" text-anchor="middle" font-size="30">🛎️</text><text x="360" y="120" text-anchor="middle" font-size="18" font-weight="700" fill="#0f1b33">الجرسون = API</text>
+<rect x="520" y="40" width="190" height="110" rx="14" fill="#fde4e5" stroke="#d9363e" stroke-width="3"/><text x="615" y="85" text-anchor="middle" font-size="38">👨‍🍳</text><text x="615" y="125" text-anchor="middle" font-size="18" font-weight="700" fill="#0f1b33">المطبخ = Back-End</text>
+<line x1="258" y1="80" x2="205" y2="80" stroke="#0f1b33" stroke-width="3" marker-end="url(#ar)"/><line x1="515" y1="80" x2="462" y2="80" stroke="#0f1b33" stroke-width="3" marker-end="url(#ar)"/>
+<text x="360" y="170" text-anchor="middle" font-size="15" fill="#26365a">① طلب ← ② تحضير ← ③ رد بالنتيجة</text></svg></div>
+<ol class="steps"><li>الزبون بيطلب (مثلاً: «هات منتجاتي»).</li><li>الـAPI بيوصّل الطلب للـBack-End.</li><li>الـBack-End بيجهّز البيانات.</li><li>الـAPI بيرجّعها للواجهة وتتعرض قدامك.</li></ol>
+</section>
+
+<section id="s6" data-title="مقدمة عن Front-End">
+<h2>مقدمة عن Front-End: بنبني بإيه؟</h2>
+<p>مطور الـFront-End بيشتغل بتلات تقنيات، وكل واحدة ليها دور مختلف. هنفهمهم في القسم الجاي بتشبيه جسم الإنسان.</p>
+<div class="grid"><div class="card"><div class="ic">🦴</div><h4>HTML</h4>بيحدد إيه الموجود في الصفحة</div><div class="card"><div class="ic">👗</div><h4>CSS</h4>بيحدد شكلها</div><div class="card"><div class="ic">🏃</div><h4>JavaScript</h4>بيخليها تتحرك وتتصرف</div></div>
+</section>
+
+<section id="s7" data-title="HTML وCSS وJavaScript">
+<h2>HTML وCSS وJavaScript</h2>
+<div class="body3"><div style="background:#0e9a9a"><span>🦴</span>HTML = الهيكل<small>العنوان والفقرة والزرار</small></div><div style="background:#d98b00"><span>👗</span>CSS = المظهر<small>الألوان والخطوط والأحجام</small></div><div style="background:#d9363e"><span>🏃</span>JavaScript = الحركة<small>لما تدوس زرار يحصل رد فعل</small></div></div>
+<h3>مثال بسيط: زرار</h3>
+<p>HTML بيعمل الزرار، وCSS بيخليه أخضر ومدوّر، وJavaScript بيخليه يظهر رسالة لما تدوس عليه.</p>
+<div class="tip"><b>💡 تذكّر</b>مش لازم تحفظهم دلوقتي. هنركز النهاردة على HTML بس.</div>
+</section>
+
+<section id="s8" data-title="ما هي لغة البرمجة؟">
+<h2>ما هي لغة البرمجة؟</h2>
+<p>أي لغة هدفها إننا نكلّم الكمبيوتر. بس مش كل اللغات بتعمل نفس الشغلانة:</p>
+<table><tr><th>اللغة</th><th>نوعها</th><th>بتعمل إيه</th></tr>
+<tr><td>HTML</td><td>لغة توصيف</td><td>بتوصف محتوى الصفحة وهيكلها</td></tr>
+<tr><td>CSS</td><td>لغة تنسيق</td><td>بتظبط الشكل</td></tr>
+<tr><td>JavaScript</td><td>لغة برمجة</td><td>بتكتب منطق وقرارات وتصرفات</td></tr></table>
+<div class="warn"><b>⚠️ خطأ شائع</b>HTML <u>مش</u> لغة برمجة. هي بتوصف المحتوى بس ومفيهاش منطق. اللغة البرمجية الوحيدة من التلاتة هي JavaScript.</div>
+</section>
+
+<section id="s9" data-title="مقدمة عن HTML">
+<h2>مقدمة عن HTML</h2>
+<p><span class="t">HTML</span> اختصار <code class="i">HyperText Markup Language</code>. يعني لغة بنكتب بيها علامات (Tags) بتقول للمتصفح: «ده عنوان، وده فقرة، وده زرار».</p>
+<p>المتصفح بيقرأ الملف ويعرض النتيجة. جرّب بنفسك في الـPlayground اللي تحت.</p>
+<h3>🧪 Playground: عدّل الكود وشوف النتيجة</h3>
+<div class="tabs" id="pgTabs"></div>
+<div class="pg"><textarea id="pgCode" spellcheck="false" aria-label="محرر الكود"></textarea><iframe id="pgOut" title="نتيجة الكود" sandbox></iframe></div>
+<div class="bar"><button class="btn" id="pgRun">▶ Run Code</button><button class="btn alt" id="pgCopy">📋 Copy Code</button></div>
+<div class="tip"><b>💡 جرّب</b>غيّر الكلام جوه التاج واضغط Run، النتيجة بتتغير فوراً.</div>
+</section>
+
+<section id="s10" data-title="تثبيت Visual Studio Code">
+<h2>تجهيز بيئة العمل – Install Your Development Environment</h2>
+<p><span class="t">Visual Studio Code</span> (واسمه المختصر VS Code) هو برنامج مجاني بنكتب فيه الأكواد.</p>
+<ol class="steps"><li>افتح الموقع الرسمي: <a href="https://code.visualstudio.com/download" target="_blank" rel="noopener noreferrer">code.visualstudio.com/download</a></li><li>اختار نسخة <b>Windows</b> المناسبة.</li><li>دوس على التحميل وانتظر لحد ما الملف ينزل.</li><li>شغّل ملف التثبيت اللي نزل.</li><li>وافق على الشروط (I accept the agreement).</li><li>كمّل بـNext لحد ما التثبيت يخلص.</li><li>افتح Visual Studio Code.</li></ol>
+<div class="tip"><b>💡 تحميل من الموقع الرسمي بس</b>ماتحملش البرامج من مواقع تانية عشان الأمان.</div>
+</section>
+
+<section id="s11" data-title="Extensions المهمة">
+<h2>Extensions المهمة: Live Server</h2>
+<p><span class="t">Extension</span> إضافة بتزوّد إمكانيات VS Code. أهم واحدة لينا دلوقتي <a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer" target="_blank" rel="noopener noreferrer">Live Server</a>.</p>
+<p>هي بتشغّل صفحات HTML على جهازك، وبتحدّث المتصفح لوحدها كل ما تحفظ التعديلات (Ctrl+S).</p>
+<ol class="steps"><li>افتح VS Code.</li><li>دوس على أيقونة Extensions في الشريط الجانبي.</li><li>اكتب في البحث: <code class="i">Live Server</code></li><li>دوس <b>Install</b>.</li><li>افتح ملف HTML.</li><li>كليك يمين على الصفحة.</li><li>اختار <code class="i">Open with Live Server</code>.</li></ol>
+</section>
+
+<section id="s12" data-title="إنشاء أول ملف HTML">
+<h2>إنشاء أول ملف HTML 📄</h2>
+<p>اسم أي ملف ليه جزئين: الاسم، وبعده <span class="t">الامتداد</span> اللي بيقول نوع الملف. ملف HTML لازم ينتهي بـ <code class="i">.html</code></p>
+<div class="grid"><div class="card" style="background:var(--green-l)"><h4>✅ صح</h4><code class="i">index.html</code><br><code class="i">home.html</code><br><code class="i">login.html</code><br><code class="i">about.html</code><br><code class="i">my-first-page.html</code></div><div class="card" style="background:var(--red-l)"><h4>❌ غلط</h4><code class="i">index.txt</code><br><code class="i">home.css</code><br><code class="i">login.js</code></div></div>
+<h3>إيه حكاية index.html؟</h3>
+<p>الاسم <code class="i">index.html</code> هو الاسم الشائع للصفحة الرئيسية. كتير من الاستضافات والسيرفرات بتدوّر عليه تلقائياً كصفحة افتراضية لما حد يفتح الموقع.</p>
+<div class="tip"><b>💡 الاسم مش إجباري</b>ينفع تعمل ملفات بأسماء تانية زي <code class="i">login.html</code> و<code class="i">about.html</code>. بس خلّي الصفحة الرئيسية اسمها index.html.</div>
+<div class="warn"><b>⚠️ خطأ شائع</b>لو ظهر الملف باسم <code class="i">index.html.txt</code>، فويندوز مخبّي الامتداد الحقيقي. فعّل «File name extensions» من قائمة View في File Explorer.</div>
+</section>
+
+<section id="s13" data-title="HTML Elements">
+<h2>HTML Elements – العناصر</h2>
+<p>الـ<span class="t">Element</span> هو وحدة بناء كاملة في الصفحة. بيتكوّن من: تاج فتح + محتوى + تاج غلق.</p>
+<div class="diag"><div class="anat"><div style="background:var(--teal-l)">&lt;h1&gt;<small>Opening Tag<br>تاج الفتح</small></div><div style="background:var(--gold-l)">أهلاً بيكم<small>Content<br>المحتوى</small></div><div style="background:var(--red-l)">&lt;/h1&gt;<small>Closing Tag<br>تاج الغلق (فيه /)</small></div></div><p style="text-align:center;margin:0">الثلاثة مع بعض = <b>Element</b></p></div>
+<table><tr><th>العنصر</th><th>وظيفته</th></tr><tr><td><code class="i">h1 … h3</code></td><td>عناوين (h1 الأكبر والأهم)</td></tr><tr><td><code class="i">p</code></td><td>فقرة نص</td></tr><tr><td><code class="i">button</code></td><td>زرار</td></tr><tr><td><code class="i">input</code></td><td>خانة إدخال (من غير تاج غلق)</td></tr><tr><td><code class="i">br</code></td><td>سطر جديد (من غير تاج غلق)</td></tr></table>
+<pre class="code"><script type="text/plain">
+<h1>عنوان كبير</h1>
+<h2>عنوان أصغر</h2>
+<h3>عنوان أصغر كمان</h3>
+<p>دي فقرة عادية.</p>
+<p>سطر أول<br>سطر تاني</p>
+<button>دوس هنا</button>
+</script></pre>
+</section>
+
+<section id="s14" data-title="HTML Attributes">
+<h2>HTML Attributes – الخصائص</h2>
+<p>الـ<span class="t">Attribute</span> معلومة إضافية بنكتبها جوه تاج الفتح عشان نغيّر شغل العنصر. شكلها <code class="i">اسم="قيمة"</code></p>
+<pre class="code"><script type="text/plain">
+<input type="password" placeholder="كلمة المرور">
+</script></pre>
+<div class="diag"><div class="anat"><div style="background:var(--teal-l)">input<small>Element</small></div><div style="background:var(--gold-l)">type<small>اسم الـAttribute</small></div><div style="background:var(--green-l)">"password"<small>القيمة</small></div></div></div>
+<div class="tip"><b>💡 الفرق</b>العنصر هو الحاجة نفسها (زرار، خانة). الـAttribute هو إعداد بيتحط عليها.</div>
+</section>
+
+<section id="s15" data-title="Input Types">
+<h2>Input Types – أنواع الخانات</h2>
+<p>الخاصية <code class="i">type</code> هي اللي بتحدد نوع الـinput. اختار نوع وجرّبه:</p>
+<div class="tabs" id="inTabs"></div>
+<div class="demo"><h3 id="inName" style="margin-top:0"></h3><p id="inDesc"></p><pre class="code" id="inCode"></pre><iframe id="inOut" title="معاينة" sandbox></iframe></div>
+</section>
+
+<section id="s16" data-title="Placeholder وValue">
+<h2>Placeholder وValue</h2>
+<div class="grid"><div class="card"><h4>placeholder</h4>نص باهت إرشادي، بيختفي أول ما تكتب.</div><div class="card"><h4>value</h4>قيمة حقيقية مكتوبة جوه الخانة من الأول، وتقدر تمسحها أو تعدّلها.</div></div>
+<pre class="code"><script type="text/plain">
+<input type="text" placeholder="اكتب اسمك">
+<input type="text" value="محمد">
+</script></pre>
+<iframe id="phOut" title="مثال placeholder وvalue" sandbox style="min-height:90px;height:90px"></iframe>
+<div class="warn"><b>⚠️ لا تخلط</b>الـplaceholder مش بيتحسب قيمة. لو الخانة فاضية والحقل محتاج بيانات، الـplaceholder ماينفعش بديل.</div>
+</section>
+
+<section id="s17" data-title="HTML Structure">
+<h2>HTML Structure – هيكل الصفحة</h2>
+<div class="diag"><div class="nest">&lt;html&gt;<div>&lt;head&gt; ← معلومات عن الصفحة (مش بتظهر)<div>&lt;title&gt; ← اسم التبويب</div></div><div>&lt;body&gt; ← اللي بيظهر للمستخدم<div>&lt;h1&gt; &lt;p&gt; &lt;button&gt; …</div></div>&lt;/html&gt;</div></div>
+<ul><li><code class="i">&lt;!DOCTYPE html&gt;</code> بتقول للمتصفح إن الملف HTML حديث.</li><li><code class="i">lang="ar" dir="rtl"</code> يعني عربي واتجاهه من اليمين.</li><li><code class="i">meta charset="UTF-8"</code> عشان الحروف العربي تظهر صح.</li><li><code class="i">head</code> للإعدادات، <code class="i">body</code> للمحتوى المرئي، <code class="i">title</code> لاسم التبويب.</li></ul>
+</section>
+
+<section id="s18" data-title="أول تطبيق عملي">
+<h2>يلا نطبق بإيدينا – First HTML Project</h2>
+<ol class="steps"><li>اعمل فولدر جديد باسم <code class="i">my-first-site</code>.</li><li>افتحه في VS Code (File ← Open Folder).</li><li>اعمل ملف جديد واسمه <code class="i">index.html</code>.</li><li>اكتب الكود ده واحفظه (Ctrl+S).</li><li>كليك يمين ← Open with Live Server.</li></ol>
+<pre class="code"><script type="text/plain">
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>My First Website</title>
+</head>
+<body>
+
+    <h1>أهلاً بيكم</h1>
+
+</body>
+</html>
+</script></pre>
+<div class="tip"><b>💡 Tip</b>في VS Code اكتب <code class="i">!</code> واضغط Tab، هيكتبلك الهيكل كله لوحده.</div>
+</section>
+
+<section id="s19" data-title="تدريبات الطلاب">
+<h2>🎯 التحدي العملي – Create Your First Registration Page</h2>
+<p>اعمل صفحة <b>إنشاء حساب جديد</b> بـHTML بس، فيها:</p>
+<ol class="steps"><li>عنوان رئيسي: «إنشاء حساب جديد».</li><li>خانة للاسم الكامل (text).</li><li>خانة للبريد الإلكتروني (email).</li><li>خانة لكلمة المرور (password).</li><li>خانة للعمر (number).</li><li>زرار مكتوب عليه «إنشاء حساب».</li></ol>
+<p>الشكل النهائي المطلوب تقريباً:</p>
+<div class="fake"><h3 style="margin:0 0 8px">إنشاء حساب جديد</h3><input disabled placeholder="اكتب اسمك"><br><input disabled placeholder="اكتب الإيميل"><br><input disabled placeholder="اكتب كلمة المرور"><br><input disabled placeholder="اكتب عمرك"><br><button disabled>إنشاء حساب</button></div>
+<p>جرّب هنا الأول:</p>
+<div class="pg"><textarea id="chCode" spellcheck="false" aria-label="محرر التحدي"></textarea><iframe id="chOut" title="نتيجة التحدي" sandbox></iframe></div>
+<div class="bar"><button class="btn" id="chRun">▶ Run Code</button><button class="btn gold" id="chSol">👀 عرض الحل</button></div>
+<div id="sol"><pre class="code"><script type="text/plain">
+<h1>إنشاء حساب جديد</h1>
+
+<input type="text" placeholder="اكتب اسمك">
+
+<input type="email" placeholder="اكتب الإيميل">
+
+<input type="password" placeholder="اكتب كلمة المرور">
+
+<input type="number" placeholder="اكتب عمرك">
+
+<button>إنشاء حساب</button>
+</script></pre></div>
+<div class="warn"><b>⚠️ مهم</b>التمرين ده للتدريب على HTML بس. الزرار مش هينشئ حساب حقيقي ولا يحفظ بيانات، لأننا لسه ما اتعلمناش Back-End.</div>
+</section>
+
+<section id="s20" data-title="اختبار نهاية الدرس">
+<h2>اختبار نهاية الدرس ✅</h2>
+<div id="quiz"></div>
+<div class="bar"><button class="btn" id="qCheck">تصحيح الإجابات</button><button class="btn alt" id="qReset">إعادة الاختبار</button></div>
+<div id="score" aria-live="polite"></div>
+<h3>⚡ ملخص سريع</h3>
+<ul><li>Front-End هو اللي بتشوفه، وBack-End هو الكواليس، وAPI هو الجرسون بينهم.</li><li>HTML هيكل (توصيف)، CSS مظهر، JavaScript حركة وهي اللغة البرمجية الوحيدة.</li><li>ملف الصفحة ينتهي بـ<code class="i">.html</code> والرئيسية اسمها الشائع <code class="i">index.html</code>.</li><li>Element = تاج فتح + محتوى + تاج غلق، وAttribute معلومة جوه تاج الفتح.</li><li>placeholder نص إرشادي بيختفي، وvalue قيمة فعلية.</li><li>الهيكل: DOCTYPE ثم html ثم head وbody.</li></ul>
+</section>
+
+<div class="pager"><button class="btn alt" id="prev">→ السابق</button><button class="btn" id="next">التالي ←</button></div>
+</div></main>
+<button id="top" aria-label="للأعلى">↑</button>
+<script src="script.js"></script>
+</body>
+</html>
